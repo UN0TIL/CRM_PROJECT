@@ -1,0 +1,15 @@
+asgiref==3.11.0
+backports-datetime-fromisoformat==2.0.3
+Django==5.2.9
+django-filter==25.2
+djangorestframework==3.16.1
+djangorestframework_simplejwt==5.5.1
+environs==14.5.0
+Markdown==3.10
+marshmallow==4.1.1
+psycopg==3.3.2
+psycopg2-binary==2.9.11
+PyJWT==2.10.1
+python-dotenv==1.2.1
+sqlparse==0.5.4
+typing_extensions==4.15.0

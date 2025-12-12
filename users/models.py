@@ -22,12 +22,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
-    
-    class Meta:
-        permissions = [
-            ("view_only_own", _('Can view only own records')),
-            ('view self', _('Can view only self records'))
-        ]
 
 class Client(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
@@ -39,5 +33,10 @@ class Client(models.Model):
         limit_choices_to={'role': Roles.MANAGER}
     )
 
+    # def __str__(self):
+    #     return self.user
+
 class Order(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    name = models.CharField(max_length=40)
+    discription = models.CharField(max_length=300)

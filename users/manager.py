@@ -43,13 +43,3 @@ class CustomUserManager(BaseUserManager):
         if extra_fields.get('is_superuser') is not True:
             raise ValueError(_('Superuser must have is_superuser=True.'))
         return self.create_user(email, password, **extra_fields)
-    
-    @staticmethod
-    def _users_role(role):
-        permission = None
-        if role == Roles.CLIENT:
-            permission = Permission.objects.get(codename='view_self')
-        elif role == Roles.MANAGER:
-            permission = Permission.objects.get(codename='view_only_own')
-
-        return permission
