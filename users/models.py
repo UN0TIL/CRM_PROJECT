@@ -33,10 +33,13 @@ class Client(models.Model):
         limit_choices_to={'role': Roles.MANAGER}
     )
 
-    # def __str__(self):
-    #     return self.user
+    def __str__(self):
+        return f'Client: {self.user}'
 
 class Order(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     name = models.CharField(max_length=40)
     discription = models.CharField(max_length=300)
+
+    def __str__(self):
+        return f'Order {self.name} by {self.client}'
