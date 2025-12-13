@@ -2,7 +2,7 @@ from django import forms
 from django.utils.translation import gettext_lazy as _
 
 from .models import CustomUser
-from .roles import Roles
+from .choices import Roles
 
 class UserCreateForm(forms.ModelForm):
     email = forms.EmailField(max_length=30)

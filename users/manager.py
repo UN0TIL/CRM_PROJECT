@@ -2,7 +2,7 @@ from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import Permission
 from django.utils.translation import gettext_lazy as _
 
-from .roles import Roles
+from .choices import Roles
 
 class CustomUserManager(BaseUserManager):
 

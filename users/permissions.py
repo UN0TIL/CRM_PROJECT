@@ -2,7 +2,7 @@ from rest_framework import permissions
 from rest_framework.viewsets import ViewSet
 from django.http import HttpRequest
 
-from .roles import Roles
+from .choices import Roles
 from .models import Order, Client
 
 
